@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <title>VESEH ✦ زبان همراه</title>
+    <title>VESEH ✦ موتور جستجوی زندگی روزمره</title>
 
     <link rel="icon" type="image/png" sizes="32x32" href="https://uploadkon.ir/uploads/cc0505_26ChatGPT-Image-Jul-6-2026-12-58-54-AM.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="https://uploadkon.ir/uploads/cc0505_26ChatGPT-Image-Jul-6-2026-12-58-54-AM.png" />
@@ -233,7 +233,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* ===== MAIN WRAPPER — وسط صفحه ===== */
+        /* ===== MAIN WRAPPER ===== */
         .main-wrapper {
             width: 100%;
             max-width: 600px;
@@ -247,7 +247,7 @@
             z-index: 1;
         }
 
-        /* ===== کاراکتر VESEH (بدون قاب) ===== */
+        /* ===== VESEH CHARACTER ===== */
         .veseh-character-wrapper {
             display: flex;
             justify-content: center;
@@ -339,7 +339,7 @@
             }
         }
 
-        /* ===== جعبه جستجو ===== */
+        /* ===== SEARCH ===== */
         .hero-search-wrapper {
             width: 100%;
             max-width: 580px;
@@ -459,7 +459,7 @@
             }
         }
 
-        /* ===== دکمه برگشت (Back) ===== */
+        /* ===== BACK BUTTON ===== */
         .back-btn-wrapper {
             width: 100%;
             max-width: 580px;
@@ -742,6 +742,24 @@
         .expr-card[data-primary-tag="communication"] {
             border-left: 3px solid #818CF8;
         }
+        .expr-card[data-primary-tag="routine"] {
+            border-left: 3px solid #34D399;
+        }
+        .expr-card[data-primary-tag="self-talk"] {
+            border-left: 3px solid #F472B6;
+        }
+        .expr-card[data-primary-tag="social"] {
+            border-left: 3px solid #60A5FA;
+        }
+        .expr-card[data-primary-tag="professional"] {
+            border-left: 3px solid #8B5CF6;
+        }
+        .expr-card[data-primary-tag="focus"] {
+            border-left: 3px solid #F59E0B;
+        }
+        .expr-card[data-primary-tag="question"] {
+            border-left: 3px solid #60A5FA;
+        }
 
         .expr-card .expr-top {
             display: flex;
@@ -786,6 +804,13 @@
             align-items: center;
             gap: 0.15rem;
             border-color: rgba(56, 189, 248, 0.04);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .expr-card .expr-tag:hover {
+            background: rgba(167, 139, 250, 0.08);
+            border-color: var(--soft-purple);
+            color: var(--text);
         }
         .expr-card .expr-tag .tag-icon {
             font-size: 0.45rem;
@@ -1069,6 +1094,7 @@
             font-size: 0.85rem;
             font-family: inherit;
             text-align: right;
+            text-decoration: none;
         }
         .sidebar-nav .nav-item:hover {
             background: rgba(167, 139, 250, 0.04);
@@ -1325,24 +1351,24 @@
     </div>
 
     <!-- ============================================================
-    MAIN WRAPPER — وسط صفحه
+    MAIN WRAPPER
     ============================================================ -->
     <div class="main-wrapper">
 
-        <!-- ===== کاراکتر VESEH (بدون قاب) ===== -->
+        <!-- ===== VESEH CHARACTER ===== -->
         <div class="veseh-character-wrapper" id="vesehWrapper">
-            <div class="chat-bubble-mini" id="chatBubble">👋 سلام!</div>
+            <div class="chat-bubble-mini" id="chatBubble">🔍 دنبال چی می‌گردی؟</div>
             <img id="vesehImage" class="veseh-img"
             src="https://uploadkon.ir/uploads/67b906_26veseh1.png"
             alt="VESEH Character" />
         </div>
 
-        <!-- ===== جعبه جستجو ===== -->
+        <!-- ===== SEARCH ===== -->
         <div class="hero-search-wrapper">
             <div class="hero-search-box" id="heroSearchBox">
                 <i class="fas fa-search search-icon"></i>
                 <input type="text" class="search-input" id="searchInput"
-                placeholder="جستجو در هر چیزی..." autocomplete="off" />
+                placeholder="چی می‌خوای بگی؟ بنویس..." autocomplete="off" />
                 <div class="search-actions">
                     <button class="search-btn filter-btn" id="filterBtn">
                         <i class="fas fa-sliders-h"></i>
@@ -1363,7 +1389,7 @@
             </div>
         </div>
 
-        <!-- ===== دکمه برگشت (Back) ===== -->
+        <!-- ===== BACK BUTTON ===== -->
         <div class="back-btn-wrapper" id="backBtnWrapper">
             <button class="back-btn" id="backBtn">
                 <i class="fas fa-arrow-right"></i> برگشت
@@ -1378,9 +1404,9 @@
             <div id="contentContainer"></div>
         </div>
 
-        <!-- ===== اطلاعات پایین ===== -->
+        <!-- ===== INFO ===== -->
         <div style="margin-top:0.8rem; font-size:0.65rem; color:var(--text-sec); opacity:0.3; text-align:center;">
-            <span id="totalInfo">0 عبارت • 0 تگ</span>
+            <span id="totalInfo">0 جمله • 0 تگ</span>
         </div>
     </div>
 
@@ -1388,7 +1414,7 @@
     <div class="record-panel" id="recordPanel">
         <div class="record-label">
             <i class="fas fa-microphone-alt"></i>
-            <span class="selected-text" id="selectedLabel">عبارتی را انتخاب کن</span>
+            <span class="selected-text" id="selectedLabel">جمله‌ای رو انتخاب کن</span>
         </div>
         <button class="rec-btn" id="startRecBtn"><i class="fas fa-circle" style="color:#EF4444; font-size:0.4rem;"></i> ضبط</button>
         <button class="rec-btn" id="stopRecBtn" disabled><i class="fas fa-stop"></i> توقف</button>
@@ -1415,7 +1441,10 @@
             <button class="nav-item" data-page="random"><i class="fas fa-dice"></i> تصادفی</button>
             <button class="nav-item" data-page="settings"><i class="fas fa-sliders-h"></i> تنظیمات</button>
             <hr class="sidebar-divider" />
-            <button class="nav-item" data-page="about"><i class="fas fa-info-circle"></i> درباره</button>
+            <!-- ===== ABOUT - تبدیل به هایپرلینک به پوشه A ===== -->
+            <a href="./A/" class="nav-item" style="text-decoration:none;">
+                <i class="fas fa-info-circle"></i> درباره
+            </a>
         </nav>
 
         <div style="margin-top:1rem;">
@@ -1423,7 +1452,7 @@
                 <i class="fas fa-chart-simple"></i> آمار
             </div>
             <div class="stats-grid">
-                <div class="stat-box"><div class="stat-number" id="statTotal">0</div><div class="stat-label">چانک</div></div>
+                <div class="stat-box"><div class="stat-number" id="statTotal">0</div><div class="stat-label">جمله</div></div>
                 <div class="stat-box"><div class="stat-number" id="statTags">0</div><div class="stat-label">تگ</div></div>
                 <div class="stat-box"><div class="stat-number" id="statBookmarks">0</div><div class="stat-label">نشان</div></div>
             </div>
@@ -1443,7 +1472,7 @@
             <div style="font-size:0.6rem; font-weight:700; color:var(--magical-blue); margin-bottom:0.2rem;">
                 <i class="fas fa-heart"></i> انگیزه
             </div>
-            <div style="font-size:0.7rem; color:var(--text-sec);" id="motivationContent">✨ زبان یک سبک زندگی است.</div>
+            <div style="font-size:0.7rem; color:var(--text-sec);" id="motivationContent">✨ جملات زندگی‌تان را بسازید.</div>
         </div>
     </aside>
 
@@ -1458,112 +1487,19 @@
             eng: "I'm opening the fridge.",
             pron: "/aɪm ˈoʊpənɪŋ ðə frɪdʒ/",
             fa: "دارم یخچال را باز می‌کنم.",
-            tags: ["kitchen", "food", "action", "home"]
+            tags: ["kitchen", "food", "action", "home", "routine"]
         }, {
             eng: "I need to go to the bathroom.",
             pron: "/aɪ niːd tə ɡoʊ tə ðə ˈbæθruːm/",
             fa: "باید برم دستشویی.",
-            tags: ["bathroom", "hygiene", "urgent", "home"]
+            tags: ["bathroom", "hygiene", "urgent", "home", "routine"]
         }, {
             eng: "I'm going to hit the hay.",
             pron: "/aɪm ˈɡoʊɪŋ tə hɪt ðə heɪ/",
             fa: "می‌رم بخوابم.",
-            tags: ["sleep", "bedtime", "idiom", "home"]
-        }, {
-            eng: "I'm dead tired.",
-            pron: "/aɪm dɛd ˈtaɪərd/",
-            fa: "خستم مرده.",
-            tags: ["sleep", "tired", "exhausted", "home"]
-        }, {
-            eng: "I need to take a shower.",
-            pron: "/aɪ niːd tə teɪk ə ˈʃaʊər/",
-            fa: "باید دوش بگیرم.",
-            tags: ["bathroom", "hygiene", "morning", "home"]
-        }, {
-            eng: "I should probably eat something.",
-            pron: "/aɪ ʃʊd ˈprɑbəbli iːt ˈsʌmθɪŋ/",
-            fa: "احتمالاً باید چیزی بخورم.",
-            tags: ["food", "hungry", "meal", "kitchen"]
-        }, {
-            eng: "What am I in the mood for?",
-            pron: "/wʌt æm aɪ ɪn ðə muːd fɔːr/",
-            fa: "به چه چیزی میل دارم؟",
-            tags: ["food", "craving", "choice", "kitchen"]
-        }, {
-            eng: "Let's schedule a meeting.",
-            pron: "/lɛts ˈskɛdʒuːl ə ˈmiːtɪŋ/",
-            fa: "بیا جلسه بذاریم.",
-            tags: ["work", "meeting", "business", "laptop"]
-        }, {
-            eng: "I agree with you.",
-            pron: "/aɪ əˈɡriː wɪð juː/",
-            fa: "با تو موافقم.",
-            tags: ["work", "agreement", "opinion", "study"]
-        }, {
-            eng: "I have a headache.",
-            pron: "/aɪ hæv ə ˈhɛdeɪk/",
-            fa: "سردرد دارم.",
-            tags: ["health", "pain", "doctor", "emergency"]
-        }, {
-            eng: "I feel dizzy.",
-            pron: "/aɪ fiːl ˈdɪzi/",
-            fa: "سرگیجه دارم.",
-            tags: ["health", "symptom", "emergency", "doctor"]
-        }, {
-            eng: "Hey, what's up?",
-            pron: "/heɪ wʌts ʌp/",
-            fa: "سلام، چه خبر؟",
-            tags: ["greeting", "casual", "friend", "emotion"]
-        }, {
-            eng: "Long time no see!",
-            pron: "/lɔːŋ taɪm noʊ siː/",
-            fa: "خیلی وقته ندیدمت!",
-            tags: ["greeting", "friend", "casual", "emotion"]
-        }, {
-            eng: "I'm going to make some tea.",
-            pron: "/aɪm ˈɡoʊɪŋ tə meɪk sʌm tiː/",
-            fa: "می‌رم چای درست کنم.",
-            tags: ["kitchen", "tea", "drink", "home"]
-        }, {
-            eng: "Where is my laptop?",
-            pron: "/wɛər ɪz maɪ ˈlæptɒp/",
-            fa: "لپ‌تاپم کجاست؟",
-            tags: ["laptop", "work", "study", "device"]
-        }, {
-            eng: "Can you call me on my phone?",
-            pron: "/kæn juː kɔːl miː ɒn maɪ foʊn/",
-            fa: "میشه به گوشیم زنگ بزنی؟",
-            tags: ["phone", "call", "communication", "device"]
-        }, {
-            eng: "I'm going to clean the kitchen.",
-            pron: "/aɪm ˈɡoʊɪŋ tə kliːn ðə ˈkɪtʃɪn/",
-            fa: "می‌رم آشپزخانه را تمیز کنم.",
-            tags: ["cleaning", "kitchen", "home", "chore"]
-        }, {
-            eng: "I need to do the laundry.",
-            pron: "/aɪ niːd tə duː ðə ˈlɔːndri/",
-            fa: "باید لباس‌ها را بشویم.",
-            tags: ["laundry", "cleaning", "home", "chore"]
-        }, {
-            eng: "I'm so happy today!",
-            pron: "/aɪm soʊ ˈhæpi təˈdeɪ/",
-            fa: "امروز خیلی خوشحالم!",
-            tags: ["emotion", "happy", "feeling", "morning"]
-        }, {
-            eng: "That's heartbreaking.",
-            pron: "/ðæts ˈhɑːrtbreɪkɪŋ/",
-            fa: "دل‌خراشه.",
-            tags: ["emotion", "sad", "feeling", "empathy"]
-        }, {
-            eng: "I'm studying for my exam.",
-            pron: "/aɪm ˈstʌdiɪŋ fɔːr maɪ ɪɡˈzæm/",
-            fa: "دارم برای امتحانم می‌خوانم.",
-            tags: ["study", "exam", "learning", "laptop"]
-        }, {
-            eng: "I love learning new things.",
-            pron: "/aɪ lʌv ˈlɜːrnɪŋ nuː θɪŋz/",
-            fa: "عاشق یادگیری چیزهای جدید هستم.",
-            tags: ["study", "learning", "motivation", "emotion"]
+            tags: ["sleep", "bedtime", "idiom", "home", "routine"]
+        
+
         }];
 
         // ============================================================
@@ -1601,58 +1537,81 @@
         const CHARACTER_STATES = {
             WELCOME: {
                 image: 'https://uploadkon.ir/uploads/67b906_26veseh1.png',
-                messages: { fa: ['👋 سلام!', '✨ خوش آمدی!', '📖 امروز رو عالی شروع کن.', '🌟 VESEH کنارت هست.'],
-                    en: ['👋 Hello!', '✨ Welcome!', '📖 Start today great.', '🌟 VESEH is here.'] }
+                messages: {
+                    fa: ['🔍 چی می‌خوای پیدا کنی؟', '💡 امروز چیکار کردی؟', '✨ هر سوالی داری بپرس.',
+                        '🌟 همه جملات اینجان'
+                    ],
+                    en: ['🔍 What do you want to find?', '💡 What did you do today?',
+                        '✨ Ask anything you need.', '🌟 All sentences are here.'
+                    ]
+                }
             },
             STUDYING: {
                 image: 'https://uploadkon.ir/uploads/09e106_26veseh9.png',
-                messages: { fa: ['📚 مطالعه قدرت میده.', '🔍 دنبال جواب می‌گردم...', '🎧 با دقت گوش می‌دم.',
-                        '✍️ یادداشت‌برداری حرفه‌ای.'
+                messages: {
+                    fa: ['📚 دارم توی جملات می‌گردم...', '🔍 پیداش می‌کنم...', '🎧 با دقت گوش می‌دم.',
+                        '✍️ این جمله رو پیدا کردم.'
                     ],
-                    en: ['📚 Study gives power.', '🔍 Searching for answers...', '🎧 Listening carefully.',
-                        '✍️ Professional note-taking.'
-                    ] }
+                    en: ['📚 Searching through sentences...', '🔍 I\'ll find it...',
+                        '🎧 Listening carefully.', '✍️ Found this sentence.'
+                    ]
+                }
             },
             THINKING: {
                 image: 'https://uploadkon.ir/uploads/75ba06_26veseh3.png',
-                messages: { fa: ['🤔 بذار روش فکر کنم...', '💭 دارم به سوالت فکر می‌کنم.', '🧐 تو خاطراتم می‌گردم...'],
-                    en: ['🤔 Let me think...', '💭 Thinking about your question.', '🧐 Searching my memories...'] }
+                messages: {
+                    fa: ['🤔 بذار فکر کنم...', '💭 به سوالت فکر می‌کنم.', '🧐 توی خاطراتم می‌گردم...'],
+                    en: ['🤔 Let me think...', '💭 Thinking about your question.',
+                        '🧐 Searching my memories...'
+                    ]
+                }
             },
             SURPRISED: {
                 image: 'https://uploadkon.ir/uploads/b88206_26v.png',
-                messages: { fa: ['😲 وای! اینو انتظار نداشتم!', '🌟 کشف شگفت‌انگیز!', '🎉 چه پیشرفتی!'],
-                    en: ['😲 Wow! Did not expect that!', '🌟 Amazing discovery!', '🎉 What progress!'] }
+                messages: {
+                    fa: ['😲 آها! پیدا شد!', '🌟 این جمله عالیه!', '🎉 دقیقاً همون چیزی که می‌خواستی!'],
+                    en: ['😲 Aha! Found it!', '🌟 This sentence is great!',
+                        '🎉 Exactly what you wanted!'
+                    ]
+                }
             },
             EMOTIONAL: {
                 image: 'https://uploadkon.ir/uploads/9e0906_26veseh5.png',
-                messages: { fa: ['💖 خیلی خوب داری پیش می‌ری!', '🌈 ادامه بده، بهت ایمان دارم.',
-                        '🌟 توانایی کارهای بزرگ رو داری.'
+                messages: {
+                    fa: ['💖 خیلی خوب داری پیش می‌ری!', '🌈 ادامه بده، بهت ایمان دارم.',
+                        '🌟 تو می‌تونی هر چیزی رو پیدا کنی.'
                     ],
-                    en: ['💖 You are doing great!', '🌈 Keep going, I believe in you.',
-                        '🌟 You have the ability for great things.'
-                    ] }
+                    en: ['💖 You\'re doing great!', '🌈 Keep going, I believe in you.',
+                        '🌟 You can find anything.'
+                    ]
+                }
             },
             CUTE: {
                 image: 'https://uploadkon.ir/uploads/9e0906_26veseh8.png',
-                messages: { fa: ['🐾 تو خیلی نازی!', '🌸 لبخندت قشنگه!', '✨ یادگیری رو لذت‌بخش می‌کنی.'],
-                    en: ['🐾 You are so cute!', '🌸 Your smile is beautiful!',
-                        '✨ You make learning enjoyable.'] }
+                messages: {
+                    fa: ['🐾 چه سوال قشنگی!', '🌸 لبخندت رو حفظ کن.', '✨ جستجو رو دوست دارم.'],
+                    en: ['🐾 What a nice question!', '🌸 Keep smiling.', '✨ I love searching.'
+                    ]
+                }
             },
             INTERESTING: {
                 image: 'https://uploadkon.ir/uploads/9e0906_26veseh2.png',
-                messages: { fa: ['🧠 می‌دونستی؟ مغز عاشق تازگیه.', '📚 خوندن همدلی رو افزایش میده.',
-                        '💡 تکرار فاصله‌دار بهتر از شب‌امتحانیه.'
+                messages: {
+                    fa: ['🧠 می‌دونستی؟ هر جمله یه داستانه.', '📚 زندگی روزمره پر از جملات جالبه.',
+                        '💡 جستجو کلید یادگیریه.'
                     ],
-                    en: ['🧠 Did you know? The brain loves novelty.', '📚 Reading increases empathy.',
-                        '💡 Spaced repetition is better than cramming.'
-                    ] }
+                    en: ['🧠 Did you know? Every sentence tells a story.',
+                        '📚 Daily life is full of interesting sentences.',
+                        '💡 Search is the key to learning.'
+                    ]
+                }
             },
             SUPER_HAPPY: {
                 image: 'https://uploadkon.ir/uploads/9e0906_26veseh7.png',
-                messages: { fa: ['🎉 تبریک! انجامش دادی!', '🌟 کارت عالی بود! جشن بگیر!', '🏆 پیروزی! تو ستاره‌ای!'],
-                    en: ['🎉 Congratulations! You did it!', '🌟 You were great! Celebrate!',
-                        '🏆 Victory! You are a star!'
-                    ] }
+                messages: {
+                    fa: ['🎉 پیدا کردی!', '🌟 عالی بود!', '🏆 تو بهترینی!'],
+                    en: ['🎉 You found it!', '🌟 That was great!', '🏆 You\'re the best!']
+                }
             },
             SLEEPING: {
                 image: 'https://uploadkon.ir/uploads/75ba06_26veseh4.png',
@@ -1802,7 +1761,13 @@
                 emergency: '🚑',
                 symptom: '🤒',
                 call: '📞',
-                communication: '💬'
+                communication: '💬',
+                routine: '🔄',
+                selfTalk: '🗣️',
+                social: '👥',
+                professional: '💼',
+                focus: '🎯',
+                question: '❓'
             };
             return icons[tag] || '🏷️';
         }
@@ -1851,7 +1816,13 @@
                 emergency: { fa: 'اورژانس', en: 'Emergency' },
                 symptom: { fa: 'نشانه', en: 'Symptom' },
                 call: { fa: 'تماس', en: 'Call' },
-                communication: { fa: 'ارتباط', en: 'Communication' }
+                communication: { fa: 'ارتباط', en: 'Communication' },
+                routine: { fa: 'روزمره', en: 'Routine' },
+                selfTalk: { fa: 'خودگویی', en: 'Self-talk' },
+                social: { fa: 'اجتماعی', en: 'Social' },
+                professional: { fa: 'حرفه‌ای', en: 'Professional' },
+                focus: { fa: 'تمرکز', en: 'Focus' },
+                question: { fa: 'سوال', en: 'Question' }
             };
             return map[tag] ? map[tag][currentLanguage] : tag;
         }
@@ -1880,16 +1851,24 @@
         function getMotivation() {
             const msgs = {
                 fa: [
-                    "✨ زبان یک سبک زندگی است.", "💪 هر روز یک جمله جدید.",
-                    "🗣️ به انگلیسی فکر کن.", "🌟 یک قدم در روز کافی است.",
-                    "📚 یادگیری یک سفر است.", "🔥 به خودت ایمان داشته باش.",
-                    "💡 تمرین باعث عالی شدن می‌شود.", "🌈 هر اشتباه یک فرصت است."
+                    "✨ هر روز یه جمله جدید به زندگی‌ت اضافه کن.",
+                    "💪 جملاتی که واقعاً به‌کارت می‌آید رو پیدا کن.",
+                    "🗣️ انگلیسی رو توی زندگی واقعی استفاده کن.",
+                    "🌟 یک قدم در روز کافیه.",
+                    "📚 زندگی کردن با انگلیسی، نه یادگیری.",
+                    "🔥 به خودت ایمان داشته باش.",
+                    "💡 جملات روزمره رو تمرین کن.",
+                    "🌈 هر جمله یه فرصته."
                 ],
                 en: [
-                    "✨ Language is a lifestyle.", "💪 One new sentence every day.",
-                    "🗣️ Think in English.", "🌟 One step a day is enough.",
-                    "📚 Learning is a journey.", "🔥 Believe in yourself.",
-                    "💡 Practice makes perfect.", "🌈 Every mistake is an opportunity."
+                    "✨ Add one new sentence to your life every day.",
+                    "💪 Find the sentences you really need.",
+                    "🗣️ Use English in real life.",
+                    "🌟 One step a day is enough.",
+                    "📚 Living with English, not learning.",
+                    "🔥 Believe in yourself.",
+                    "💡 Practice everyday sentences.",
+                    "🌈 Every sentence is an opportunity."
                 ]
             };
             const list = msgs[currentLanguage] || msgs.fa;
@@ -1949,11 +1928,9 @@
         function switchCharacterState() {
             stateCounter++;
 
-            // بعد از 2 حالت غیرخواب، برو به خواب
             if (stateCounter >= 2 && !isSleeping) {
                 stateCounter = 0;
                 applyCharacterState('SLEEPING');
-                // تایمر برای بیدار شدن بعد از 30 ثانیه
                 clearTimeout(characterTimer);
                 characterTimer = setTimeout(() => {
                     if (isSleeping) {
@@ -1963,10 +1940,8 @@
                 return;
             }
 
-            // اگر خواب است، کاری نکن
             if (isSleeping) return;
 
-            // انتخاب حالت تصادفی غیرخواب
             const available = NON_SLEEP_KEYS.filter(k => k !== characterState);
             if (available.length === 0) {
                 applyCharacterState('WELCOME');
@@ -1975,7 +1950,6 @@
             const newKey = available[Math.floor(Math.random() * available.length)];
             applyCharacterState(newKey);
 
-            // ریست تایمر
             clearTimeout(characterTimer);
             characterTimer = setTimeout(() => {
                 switchCharacterState();
@@ -2094,7 +2068,7 @@
                     <div class="empty-state">
                         <i class="fas fa-search"></i>
                         <div class="empty-title">${getLocalizedText({ fa: 'چیزی پیدا نشد', en: 'Nothing found' })}</div>
-                        <div class="empty-desc">${getLocalizedText({ fa: 'سعی کن با کلمات دیگری جستجو کنی ✨', en: 'Try different keywords ✨' })}</div>
+                        <div class="empty-desc">${getLocalizedText({ fa: 'با کلمات دیگه جستجو کن ✨', en: 'Try different keywords ✨' })}</div>
                     </div>
                 `;
                 return;
@@ -2111,7 +2085,7 @@
                                 <div class="expr-eng">${expr.eng}</div>
                                 <div class="expr-pron">${expr.pron}</div>
                                 <div class="expr-fa">${expr.fa}</div>
-                                <div class="expr-tags">${expr.tags.map(t => `<span class="expr-tag"><span class="tag-icon">${getTagIcon(t)}</span> ${getLocalizedTag(t)}</span>`).join('')}</div>
+                                <div class="expr-tags">${expr.tags.map(t => `<span class="expr-tag" data-tag="${t}"><span class="tag-icon">${getTagIcon(t)}</span> ${getLocalizedTag(t)}</span>`).join('')}</div>
                             </div>
                             <div class="expr-actions">
                                 <button class="action-btn play-btn" data-eng="${expr.eng}"><i class="fas fa-play"></i></button>
@@ -2174,6 +2148,21 @@
                 };
             });
 
+            // Tag click
+            document.querySelectorAll('.expr-tag').forEach(tagEl => {
+                tagEl.onclick = (e) => {
+                    e.stopPropagation();
+                    const tag = tagEl.dataset.tag;
+                    if (tag) {
+                        activeFilter = activeFilter === tag ? null : tag;
+                        renderFilterGrid();
+                        updateFilterBadge();
+                        applyFilters();
+                        applyCharacterState('INTERESTING');
+                    }
+                };
+            });
+
             updateStats();
         }
 
@@ -2210,7 +2199,6 @@
             updateFilterBadge();
             hideResults();
             applyCharacterState('WELCOME');
-            // به‌روزرسانی اطلاعات پایین
             updateTotalInfo();
         }
 
@@ -2234,7 +2222,7 @@
 
         function updateTotalInfo() {
             const allTags = getAllTags();
-            const exprLabel = getLocalizedText({ fa: 'عبارت', en: 'expressions' });
+            const exprLabel = getLocalizedText({ fa: 'جمله', en: 'sentences' });
             const tagLabel = getLocalizedText({ fa: 'تگ', en: 'tags' });
             totalInfo.textContent =
                 `${expressions.length} ${exprLabel} • ${allTags.length} ${tagLabel}`;
@@ -2316,8 +2304,9 @@
         // RECORDING
         // ============================================================
         async function startRecording() {
-            const selectMsg = getLocalizedText({ fa: 'لطفاً ابتدا یک عبارت را با کلیک روی دکمه میکروفون انتخاب کنید.',
-                en: 'Please select a phrase first by clicking the microphone button.' });
+            const selectMsg = getLocalizedText({ fa: 'لطفاً ابتدا یک جمله را با کلیک روی دکمه میکروفون انتخاب کنید.',
+                en: 'Please select a sentence first by clicking the microphone button.'
+            });
             if (!selectedPhrase) {
                 alert(selectMsg);
                 return;
@@ -2397,12 +2386,11 @@
         function toggleLanguage() {
             currentLanguage = currentLanguage === 'fa' ? 'en' : 'fa';
             langBtn.textContent = currentLanguage === 'fa' ? 'FA' : 'EN';
-            const placeholder = getLocalizedText({ fa: 'جستجو در هر چیزی...', en: 'Search anything...' });
+            const placeholder = getLocalizedText({ fa: 'چی می‌خوای بگی؟ بنویس...', en: 'What do you want to say? Type...' });
             searchInput.placeholder = placeholder;
             renderFilterGrid();
             updateFilterBadge();
 
-            // منوی سایدبار
             const navItems = document.querySelectorAll('.sidebar-nav .nav-item');
             const labels = [
                 { fa: 'صفحه اصلی', en: 'Home' },
@@ -2416,23 +2404,20 @@
             navItems.forEach((item, idx) => {
                 if (idx < labels.length) {
                     const text = item.querySelector('span') || item;
-                    text.textContent = labels[idx][currentLanguage];
+                    if (text) text.textContent = labels[idx][currentLanguage];
                 }
             });
 
-            // برند
             document.querySelector('.brand').innerHTML = `<i class="fas fa-sparkles"></i> VESEH`;
 
-            // آمار
-            const totalLabel = getLocalizedText({ fa: 'چانک', en: 'Chunks' });
+            const totalLabel = getLocalizedText({ fa: 'جمله', en: 'Sentences' });
             const tagsLabel = getLocalizedText({ fa: 'تگ', en: 'Tags' });
             const bookmarksLabel = getLocalizedText({ fa: 'نشان', en: 'Bookmarks' });
             document.querySelectorAll('.stat-box .stat-label')[0].textContent = totalLabel;
             document.querySelectorAll('.stat-box .stat-label')[1].textContent = tagsLabel;
             document.querySelectorAll('.stat-box .stat-label')[2].textContent = bookmarksLabel;
 
-            // رکورد
-            const recordLabel = getLocalizedText({ fa: 'عبارتی را انتخاب کن', en: 'Select a phrase' });
+            const recordLabel = getLocalizedText({ fa: 'جمله‌ای رو انتخاب کن', en: 'Select a sentence' });
             if (!selectedPhrase) {
                 selectedLabel.textContent = recordLabel;
             }
@@ -2457,20 +2442,15 @@
                 }
             });
 
-            // دکمه برگشت
             const backLabel = getLocalizedText({ fa: 'برگشت', en: 'Back' });
             backBtn.innerHTML = `<i class="fas fa-arrow-right"></i> ${backLabel}`;
 
-            // انگیزه
             motivationContent.textContent = getMotivation();
-
-            // فیلتر
             filterBtn.innerHTML = `<i class="fas fa-sliders-h"></i>`;
 
             if (isShowingResults) renderResults();
             updateTotalInfo();
 
-            // به‌روزرسانی کاراکتر
             if (!isSleeping) {
                 const msg = getRandomCharacterMessage(characterState);
                 chatBubble.textContent = msg;
@@ -2501,21 +2481,9 @@
                 return;
             }
 
-            // برای صفحات دیگر، نتایج را مخفی می‌کنیم و محتوای خاص نشان می‌دهیم
             hideResults();
 
-            const homeLabel = getLocalizedText({ fa: 'صفحه اصلی', en: 'Home' });
-            const exploreLabel = getLocalizedText({ fa: 'کاوش', en: 'Explore' });
-            const bookmarksLabel = getLocalizedText({ fa: 'نشان‌ها', en: 'Bookmarks' });
-            const statsLabel = getLocalizedText({ fa: 'آمار', en: 'Statistics' });
-            const randomLabel = getLocalizedText({ fa: 'تصادفی', en: 'Random' });
-            const settingsLabel = getLocalizedText({ fa: 'تنظیمات', en: 'Settings' });
-            const aboutLabel = getLocalizedText({ fa: 'درباره', en: 'About' });
-
-            applyCharacterState('THINKING');
-
             if (page === 'explore') {
-                // نمایش همه چانک‌ها در نتایج
                 searchQuery = '';
                 searchInput.value = '';
                 activeFilter = null;
@@ -2532,7 +2500,7 @@
                         <div class="empty-state">
                             <i class="fas fa-bookmark"></i>
                             <div class="empty-title">${getLocalizedText({ fa: 'نشانی وجود ندارد', en: 'No bookmarks' })}</div>
-                            <div class="empty-desc">${getLocalizedText({ fa: 'عبارات مورد علاقه‌ات را نشان کن ✨', en: 'Bookmark your favorite expressions ✨' })}</div>
+                            <div class="empty-desc">${getLocalizedText({ fa: 'جملات مورد نیازت رو نشان کن ✨', en: 'Bookmark the sentences you need ✨' })}</div>
                         </div>
                     `;
                 } else {
@@ -2600,12 +2568,9 @@
 
             if (page === 'stats') {
                 const allTags = getAllTags();
-                const totalLabel = getLocalizedText({ fa: 'کل چانک‌ها', en: 'Total Chunks' });
+                const totalLabel = getLocalizedText({ fa: 'کل جملات', en: 'Total Sentences' });
                 const tagsLabel = getLocalizedText({ fa: 'تگ‌ها', en: 'Tags' });
                 const bookmarksLabel2 = getLocalizedText({ fa: 'نشان‌ها', en: 'Bookmarks' });
-                const homeLabel2 = getLocalizedText({ fa: 'خانه', en: 'Home' });
-                const kitchenLabel = getLocalizedText({ fa: 'آشپزخانه', en: 'Kitchen' });
-                const emotionLabel = getLocalizedText({ fa: 'احساسات', en: 'Emotions' });
                 contentContainer.innerHTML = `
                     <div style="padding:0.8rem 0;">
                         <h2 style="font-size:1.1rem; margin-bottom:0.8rem;">📊 ${getLocalizedText({ fa: 'آمار', en: 'Statistics' })}</h2>
@@ -2613,9 +2578,6 @@
                             <div class="stat-box"><div class="stat-number">${expressions.length}</div><div class="stat-label">${totalLabel}</div></div>
                             <div class="stat-box"><div class="stat-number">${allTags.length}</div><div class="stat-label">${tagsLabel}</div></div>
                             <div class="stat-box"><div class="stat-number">${bookmarks.length}</div><div class="stat-label">${bookmarksLabel2}</div></div>
-                            <div class="stat-box"><div class="stat-number">${expressions.filter(e => e.tags.includes('home')).length}</div><div class="stat-label">🏠 ${homeLabel2}</div></div>
-                            <div class="stat-box"><div class="stat-number">${expressions.filter(e => e.tags.includes('kitchen')).length}</div><div class="stat-label">🍳 ${kitchenLabel}</div></div>
-                            <div class="stat-box"><div class="stat-number">${expressions.filter(e => e.tags.includes('emotion')).length}</div><div class="stat-label">😊 ${emotionLabel}</div></div>
                         </div>
                     </div>
                 `;
@@ -2653,7 +2615,7 @@
                             <div style="font-weight:600; margin-bottom:0.2rem; font-size:0.8rem;">${aboutVeseh}</div>
                             <div style="font-size:0.7rem; color:var(--text-sec); line-height:1.6;">
                                 ${desc}
-                                <br />نسخه ۱.۰
+                                <br />نسخه ۲.۰
                             </div>
                         </div>
                     </div>
@@ -2664,26 +2626,7 @@
                 return;
             }
 
-            if (page === 'about') {
-                const aboutVeseh = getLocalizedText({ fa: 'درباره VESEH', en: 'About VESEH' });
-                const desc = getLocalizedText({ fa: 'همراه شخصی زبان. طراحی شده برای زندگی روزمره با انگلیسی.', en: 'Personal language companion. Designed for daily life with English.' });
-                contentContainer.innerHTML = `
-                    <div style="padding:1.5rem 0; text-align:center;">
-                        <div style="font-size:2.5rem; margin-bottom:0.8rem;">✨</div>
-                        <h2 style="font-size:1.2rem; font-weight:800; margin-bottom:0.3rem;">VESEH</h2>
-                        <div style="color:var(--text-sec); font-size:0.85rem; max-width:350px; margin:0 auto; line-height:1.8;">
-                            ${desc}
-                            <br /><br />
-                            <span style="font-size:0.7rem; opacity:0.5;">نسخه ۱.۰</span>
-                        </div>
-                    </div>
-                `;
-                resultsContainer.classList.add('visible');
-                backBtnWrapper.classList.add('visible');
-                closeSidebarPanel();
-                return;
-            }
-
+            // درباره حذف شد چون به هایپرلینک تبدیل شده
             closeSidebarPanel();
         }
 
@@ -2736,10 +2679,10 @@
                 showResults();
             } else {
                 hideResults();
-                // ریست فیلتر هم
                 activeFilter = null;
                 renderFilterGrid();
                 updateFilterBadge();
+                applyCharacterState('WELCOME');
             }
         });
 
@@ -2758,7 +2701,9 @@
         document.querySelectorAll('.sidebar-nav .nav-item').forEach(item => {
             item.onclick = () => {
                 const page = item.dataset.page;
-                navigateTo(page);
+                if (page) {
+                    navigateTo(page);
+                }
             };
         });
 
@@ -2775,7 +2720,6 @@
         playRecBtn.onclick = playRecording;
         saveRecBtn.onclick = saveRecording;
 
-        // ===== کلیک روی کاراکتر =====
         vesehImage.onclick = () => {
             if (isSleeping) {
                 wakeUpCharacter();
@@ -2795,10 +2739,11 @@
         startCharacterCycle();
         updateTotalInfo();
 
-        console.log('✨ VESEH v1.0 — با کاراکتر خواب و بیدار، وسط صفحه');
-        console.log(`📚 ${expressions.length} چانک بارگذاری شد`);
+        console.log('✨ VESEH V2 — موتور جستجوی زندگی روزمره');
+        console.log(`📚 ${expressions.length} جمله بارگذاری شد`);
         console.log(`🏷️ ${getAllTags().length} تگ`);
-        console.log('🧚 کاراکتر: ۲ حالت ۳۰ ثانیه سپس خواب');
+        console.log('🧚 کاراکتر: همراه، نه معلم');
+        console.log('🔗 دکمه درباره به پوشه A متصل شد');
     </script>
 </body>
 </html>
