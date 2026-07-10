@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>VESEH ✦ راهنمای جامع کاربر</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="https://uploadkon.ir/uploads/cc0505_26ChatGPT-Image-Jul-6-2026-12-58-54-AM.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://uploadkon.ir/uploads/cc0505_26ChatGPT-Image-Jul-6-2026-12-58-54-AM.png" />
+    <link rel="shortcut icon" href="https://uploadkon.ir/uploads/cc0505_26ChatGPT-Image-Jul-6-2026-12-58-54-AM.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://uploadkon.ir/uploads/cc0505_26ChatGPT-Image-Jul-6-2026-12-58-54-AM.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ===== ROOT ===== */
+        :root {
+            --deep-navy: #0B0720;
+            --soft-purple: #7C3AED;
+            --magical-blue: #38BDF8;
+            --soft-pink: #F0ABFC;
+            --indigo: #4F46E5;
+            --gold: #F59E0B;
+            --light-bg: #F5F0FF;
+            --light-text: #1A0D2E;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-light: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.05);
+            --border-light: rgba(255, 255, 255, 0.08);
+            --text: #FFFFFF;
+            --text-sec: rgba(255, 255, 255, 0.6);
+            --text-muted: rgba(255, 255, 255, 0.25);
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            --shadow-hover: 0 25px 70px rgba(124, 58, 237, 0.12);
+            --shadow-glow: 0 0 60px rgba(124, 58, 237, 0.03);
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
+            --transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        body.light-mode {
+            --deep-navy: #F5F0FF;
+            --glass: rgba(255, 255, 255, 0.6);
+            --glass-light: rgba(255, 255, 255, 0.8);
+            --border: rgba(124, 58, 237, 0.06);
+            --border-light: rgba(124, 58, 237, 0.08);
+            --text: #1A0D2E;
+            --text-sec: #4A2A6A;
+            --text-muted: rgba(74, 42, 106, 0.3);
+            --shadow: 0 20px 60px rgba(124, 58, 237, 0.04);
+            --shadow-hover: 0 25px 70px rgba(124, 58, 237, 0.06);
+            --shadow-glow: 0 0 60px rgba(124, 58, 237, 0.02);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--deep-navy);
+            color: var(--text);
+            min-height: 100vh;
+            transition: background 0.5s ease, color 0.5s ease;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(155, 107, 255, 0.02);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--soft-purple), var(--magical-blue));
+            border-radius: 10px;
+        }
+
+        /* ===== MAGICAL BG ===== */
+        .magic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 15% 40%, rgba(124, 58, 237, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 30%, rgba(79, 70, 229, 0.04) 0%, transparent 40%),
+                radial-gradient(ellipse at 50% 80%, rgba(56, 189, 248, 0.04) 0%, transparent 40%),
+                radial-gradient(ellipse at 30% 70%, rgba(240, 171, 252, 0.03) 0%, transparent 40%),
+                var(--deep-navy);
+            transition: background 0.5s ease;
+        }
+        .sparkle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--magical-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 8px 3px rgba(56, 189, 248, 0.08);
+            animation: floatUp linear infinite;
+            opacity: 0;
+        }
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(240, 171, 252, 0.03), rgba(56, 189, 248, 0.01));
+            border: 1px solid rgba(240, 171, 252, 0.015);
+            animation: floatUpBubble linear infinite;
+            opacity: 0;
+            backdrop-filter: blur(2px);
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.1);
+                opacity: 0;
+            }
+        }
+        @keyframes floatUpBubble {
+            0% {
+                transform: translateY(100vh) scale(0.3) rotate(0deg);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.08;
+            }
+            85% {
+                opacity: 0.08;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .header {
+            width: 100%;
+            max-width: 1400px;
+            padding: 0.6rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 7, 32, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .logo-img {
+            height: 38px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 20px rgba(167, 139, 250, 0.12));
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .logo-img:hover {
+            transform: scale(1.05) rotate(-1deg);
+            filter: drop-shadow(0 4px 30px rgba(167, 139, 250, 0.2));
+        }
+        .logo-text {
+            font-size: 1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--soft-purple), var(--magical-blue), var(--soft-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+            cursor: pointer;
+        }
+        .logo-text:hover {
+            opacity: 0.8;
+        }
+        .header-right {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .icon-btn {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            cursor: pointer;
+            color: var(--text-sec);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-btn:hover {
+            background: rgba(167, 139, 250, 0.06);
+            border-color: var(--soft-purple);
+            color: var(--text);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.06);
+        }
+        .lang-btn {
+            font-weight: 700;
+            font-size: 0.6rem;
+            width: 42px;
+            letter-spacing: 0.3px;
+            font-family: inherit;
+        }
+
+        @media(max-width:768px) {
+            .header {
+                padding: 0.4rem 1rem;
+                flex-wrap: wrap;
+                gap: 0.3rem;
+            }
+            .logo-img {
+                height: 30px;
+            }
+            .logo-text {
+                font-size: 0.85rem;
+            }
+            .icon-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 0.7rem;
+            }
+            .lang-btn {
+                width: 36px;
+                font-size: 0.5rem;
+            }
+        }
+
+        /* ============================================================
+           MAIN CONTAINER
+           ============================================================ */
+        .main-wrapper {
+            width: 100%;
+            max-width: 1400px;
+            padding: 1.5rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media(max-width:768px) {
+            .main-wrapper {
+                padding: 0.8rem 1rem 1.5rem;
+                gap: 1rem;
+            }
+        }
+
+        /* ============================================================
+           HERO SECTION — با لوگو
+           ============================================================ */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.8rem 0 1rem;
+            position: relative;
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem 2.5rem;
+            box-shadow: var(--shadow), var(--shadow-glow);
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.02), rgba(79, 70, 229, 0.01));
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--soft-purple), var(--magical-blue), var(--soft-pink),
+                transparent);
+            opacity: 0.6;
+        }
+        .hero-section .hero-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .hero-section .hero-logo .hero-logo-img {
+            height: 56px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 30px rgba(167, 139, 250, 0.15));
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .hero-section .hero-logo .hero-logo-img:hover {
+            transform: scale(1.05) rotate(-2deg);
+            filter: drop-shadow(0 6px 40px rgba(167, 139, 250, 0.25));
+        }
+        .hero-section .hero-logo .hero-logo-text {
+            font-size: 1.6rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--soft-purple), var(--magical-blue), var(--soft-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
+            cursor: pointer;
+        }
+        .hero-section .hero-logo .hero-logo-text:hover {
+            opacity: 0.8;
+        }
+        @keyframes gradientShift {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .hero-section .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(124, 58, 237, 0.06);
+            border: 1px solid rgba(124, 58, 237, 0.06);
+            border-radius: 2rem;
+            padding: 0.3rem 1.2rem;
+            font-size: 0.6rem;
+            color: var(--text-sec);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+            backdrop-filter: blur(4px);
+        }
+        .hero-section .hero-badge i {
+            color: var(--magical-blue);
+            font-size: 0.65rem;
+        }
+        .hero-section .hero-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        .hero-section .hero-title .highlight {
+            background: linear-gradient(135deg, var(--soft-purple), var(--magical-blue), var(--soft-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
+        }
+        .hero-section .hero-sub {
+            font-size: 0.9rem;
+            color: var(--text-sec);
+            opacity: 0.6;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        .hero-section .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .hero-section .hero-stats .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.7rem;
+            color: var(--text-sec);
+            opacity: 0.5;
+        }
+        .hero-section .hero-stats .stat-item i {
+            color: var(--magical-blue);
+            opacity: 0.5;
+        }
+        .hero-section .hero-stats .stat-item strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        @media(max-width:768px) {
+            .hero-section {
+                padding: 1.2rem 1rem;
+                border-radius: var(--radius-md);
+            }
+            .hero-section .hero-logo .hero-logo-img {
+                height: 40px;
+            }
+            .hero-section .hero-logo .hero-logo-text {
+                font-size: 1.2rem;
+            }
+            .hero-section .hero-title {
+                font-size: 1.5rem;
+            }
+            .hero-section .hero-sub {
+                font-size: 0.75rem;
+            }
+            .hero-section .hero-stats {
+                gap: 1rem;
+            }
+            .hero-section .hero-stats .stat-item {
+                font-size: 0.6rem;
+            }
+        }
+
+        /* ============================================================
+           DASHBOARD GRID — 2 COLUMNS
+           ============================================================ */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            width: 100%;
+        }
+
+        /* ============================================================
+           GUIDE CARDS
+           ============================================================ */
+        .guide-card {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.8rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: var(--shadow), var(--shadow-glow);
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.015), rgba(79, 70, 229, 0.008));
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .guide-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--soft-purple), var(--magical-blue), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .guide-card:hover::before {
+            opacity: 1;
+        }
+        .guide-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(167, 139, 250, 0.12);
+            box-shadow: var(--shadow-hover), var(--shadow-glow);
+        }
+
+        .guide-card:nth-child(1) { animation-delay: 0.05s; }
+        .guide-card:nth-child(2) { animation-delay: 0.10s; }
+        .guide-card:nth-child(3) { animation-delay: 0.15s; }
+        .guide-card:nth-child(4) { animation-delay: 0.20s; }
+        .guide-card:nth-child(5) { animation-delay: 0.25s; }
+        .guide-card:nth-child(6) { animation-delay: 0.30s; }
+        .guide-card:nth-child(7) { animation-delay: 0.35s; }
+        .guide-card:nth-child(8) { animation-delay: 0.40s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .guide-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .guide-card .card-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(124, 58, 237, 0.04);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(124, 58, 237, 0.04);
+        }
+        .guide-card .card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .guide-card .card-title .highlight {
+            background: linear-gradient(135deg, var(--soft-purple), var(--magical-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .guide-card .card-desc {
+            font-size: 0.82rem;
+            color: var(--text-sec);
+            line-height: 2;
+            padding-right: 0.2rem;
+        }
+        .guide-card .card-desc strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .guide-card .card-desc .tag-example {
+            display: inline-block;
+            background: rgba(167, 139, 250, 0.04);
+            border: 1px solid rgba(167, 139, 250, 0.04);
+            border-radius: 2rem;
+            padding: 0.05rem 0.6rem;
+            font-size: 0.6rem;
+            color: var(--text-sec);
+            margin: 0.1rem 0.1rem;
+            transition: all 0.2s;
+        }
+        .guide-card .card-desc .tag-example:hover {
+            background: rgba(167, 139, 250, 0.08);
+            border-color: rgba(167, 139, 250, 0.08);
+            color: var(--text);
+        }
+        .guide-card .card-desc .flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.2rem;
+            margin: 0.4rem 0;
+            font-size: 0.7rem;
+            padding: 0.4rem 0.6rem;
+            background: rgba(124, 58, 237, 0.02);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(124, 58, 237, 0.02);
+        }
+        .guide-card .card-desc .flow .step {
+            background: rgba(124, 58, 237, 0.06);
+            border: 1px solid rgba(124, 58, 237, 0.04);
+            border-radius: 2rem;
+            padding: 0.1rem 0.6rem;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.65rem;
+        }
+        .guide-card .card-desc .flow .arrow {
+            color: var(--magical-blue);
+            opacity: 0.3;
+        }
+        .guide-card .card-desc .rule-box {
+            background: rgba(124, 58, 237, 0.02);
+            border: 1px dashed rgba(124, 58, 237, 0.04);
+            border-radius: var(--radius-sm);
+            padding: 0.6rem 0.8rem;
+            margin: 0.3rem 0;
+            line-height: 2.2;
+        }
+        .guide-card .card-desc .rule-box .q {
+            display: block;
+            padding-right: 0.5rem;
+        }
+        .guide-card .card-desc .divider-line {
+            width: 30px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--soft-purple), transparent);
+            margin: 0.3rem 0;
+            opacity: 0.3;
+        }
+        .guide-card .card-desc .highlight-box {
+            background: rgba(56, 189, 248, 0.02);
+            border: 1px solid rgba(56, 189, 248, 0.04);
+            border-radius: var(--radius-sm);
+            padding: 0.4rem 0.8rem;
+            margin: 0.2rem 0;
+        }
+        .guide-card .card-footer-tag {
+            margin-top: 0.3rem;
+            font-size: 0.55rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            opacity: 0.5;
+        }
+        .guide-card .card-footer-tag i {
+            font-size: 0.5rem;
+        }
+
+        /* Card variants with colored left border */
+        .guide-card.accent-purple {
+            border-left: 2px solid rgba(124, 58, 237, 0.25);
+        }
+        .guide-card.accent-blue {
+            border-left: 2px solid rgba(56, 189, 248, 0.25);
+        }
+        .guide-card.accent-pink {
+            border-left: 2px solid rgba(240, 171, 252, 0.25);
+        }
+        .guide-card.accent-gold {
+            border-left: 2px solid rgba(245, 158, 11, 0.25);
+        }
+        .guide-card.accent-green {
+            border-left: 2px solid rgba(52, 211, 153, 0.25);
+        }
+
+        @media(max-width:1024px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+
+        @media(max-width:768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            .guide-card {
+                padding: 1rem 1.2rem;
+            }
+            .guide-card .card-title {
+                font-size: 0.9rem;
+            }
+            .guide-card .card-desc {
+                font-size: 0.75rem;
+                line-height: 1.9;
+            }
+            .guide-card .card-icon {
+                font-size: 1.1rem;
+                width: 32px;
+                height: 32px;
+            }
+            .guide-card .card-desc .flow {
+                font-size: 0.6rem;
+                padding: 0.3rem 0.4rem;
+            }
+            .guide-card .card-desc .flow .step {
+                font-size: 0.55rem;
+                padding: 0.05rem 0.4rem;
+            }
+        }
+
+        /* ============================================================
+           DIVIDER
+           ============================================================ */
+        .divider-full {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 0.3rem 0;
+            opacity: 0.3;
+        }
+
+        /* ============================================================
+           FOOTER CHARACTER
+           ============================================================ */
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.5rem;
+            width: 100%;
+            position: relative;
+            padding: 0.8rem 0;
+        }
+        .footer-section .slogan-box {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.2rem 2.5rem;
+            margin-bottom: 0.6rem;
+            box-shadow: var(--shadow), var(--shadow-glow);
+            border: 1px solid rgba(56, 189, 248, 0.05);
+            text-align: center;
+            max-width: 80%;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .footer-section .slogan-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--soft-purple), var(--magical-blue), transparent);
+            opacity: 0.5;
+        }
+        .footer-section .slogan-box .slogan-icon {
+            font-size: 1.4rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .footer-section .slogan-box .slogan-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--magical-blue);
+            letter-spacing: -0.2px;
+        }
+        .footer-section .slogan-box .slogan-sub {
+            font-size: 0.75rem;
+            color: var(--text-sec);
+            opacity: 0.5;
+            margin-top: 0.2rem;
+        }
+        .footer-section .veseh-img {
+            height: 90px;
+            width: 90px;
+            object-fit: contain;
+            filter: drop-shadow(0 6px 30px rgba(167, 139, 250, 0.12));
+            transition: all 0.4s ease;
+            cursor: default;
+            background: transparent;
+            border: none;
+            padding: 0;
+            border-radius: 0;
+        }
+        .footer-section .veseh-img:hover {
+            transform: scale(1.05) rotate(-2deg);
+            filter: drop-shadow(0 8px 40px rgba(167, 139, 250, 0.18));
+        }
+
+        @media(max-width:768px) {
+            .footer-section .slogan-box {
+                padding: 0.8rem 1.2rem;
+                max-width: 95%;
+            }
+            .footer-section .slogan-box .slogan-title {
+                font-size: 0.85rem;
+            }
+            .footer-section .slogan-box .slogan-sub {
+                font-size: 0.6rem;
+            }
+            .footer-section .veseh-img {
+                height: 70px;
+                width: 70px;
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE — FULL WINDOW
+           ============================================================ */
+        @media(min-width:1400px) {
+            .main-wrapper {
+                padding: 2rem 3rem 2.5rem;
+            }
+            .dashboard-grid {
+                gap: 1.5rem;
+            }
+            .guide-card {
+                padding: 1.8rem 2.2rem;
+            }
+            .guide-card .card-title {
+                font-size: 1.1rem;
+            }
+            .guide-card .card-desc {
+                font-size: 0.88rem;
+            }
+            .hero-section .hero-title {
+                font-size: 2.6rem;
+            }
+        }
+
+        /* ============================================================
+           BOTTOM SPACER
+           ============================================================ */
+        .bottom-spacer {
+            height: 0.5rem;
+        }
+
+        /* ============================================================
+           SCROLL INDICATOR
+           ============================================================ */
+        .scroll-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            opacity: 0.3;
+            margin-top: 0.3rem;
+        }
+        .scroll-indicator i {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(4px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== MAGIC BG ===== -->
+    <div class="magic-bg" id="magicBg"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="header-left">
+            <img class="logo-img" src="https://uploadkon.ir/uploads/811f05_26ChatGPT-Image-Jul-6-2026-01-27-12-AM.png" alt="VESEH Logo" onclick="window.location.href='index.html'" />
+            <span class="logo-text" onclick="window.location.href='index.html'">VESEH</span>
+        </div>
+        <div class="header-right">
+            <button class="icon-btn lang-btn" id="langBtn">FA</button>
+            <button class="icon-btn" id="themeBtn"><i class="fas fa-moon" id="themeIcon"></i></button>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    MAIN WRAPPER
+    ============================================================ -->
+    <div class="main-wrapper">
+
+        <!-- ===== HERO SECTION با لوگو ===== -->
+        <section class="hero-section">
+            <div class="hero-logo">
+                <img class="hero-logo-img" src="https://uploadkon.ir/uploads/811f05_26ChatGPT-Image-Jul-6-2026-01-27-12-AM.png" alt="VESEH Logo" onclick="window.location.href='index.html'" />
+                <span class="hero-logo-text" onclick="window.location.href='index.html'">VESEH</span>
+            </div>
+
+            <div class="hero-badge">
+                <i class="fas fa-compass"></i>
+                راهنمای کامل کاربر
+            </div>
+
+            <h1 class="hero-title">
+                به <span class="highlight">Veseh</span> خوش آمدید
+            </h1>
+
+            <p class="hero-sub">
+                همراه شخصی زبان برای زندگی روزمره<br />
+                <span style="opacity:0.4;">— جملات واقعی، زندگی واقعی —</span>
+            </p>
+
+            <div class="hero-stats">
+                <span class="stat-item"><i class="fas fa-book"></i> <strong>۸</strong> بخش راهنما</span>
+                <span class="stat-item"><i class="fas fa-tag"></i> <strong>۲</strong> زبان</span>
+                <span class="stat-item"><i class="fas fa-moon"></i> تم <strong>شب</strong> پیش‌فرض</span>
+                <span class="stat-item"><i class="fas fa-globe"></i> <strong>زندگی واقعی</strong> اول</span>
+            </div>
+
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+                <span>اسکرول برای مشاهده راهنما</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <div class="divider-full"></div>
+
+        <!-- ===== DASHBOARD GRID ===== -->
+        <div class="dashboard-grid">
+
+            <!-- 1. Welcome -->
+            <div class="guide-card accent-purple">
+                <div class="card-header">
+                    <span class="card-icon">🌟</span>
+                    <span class="card-title">به <span class="highlight">Veseh</span> خوش آمدید</span>
+                </div>
+                <div class="card-desc">
+                    <strong>Veseh یک اپلیکیشن آموزش زبان سنتی نیست.</strong><br />
+                    این یک <strong>همراه شخصی زبان</strong> است که برای آوردن انگلیسی به <strong>زندگی روزمره</strong>
+                    طراحی شده است.
+                    <div class="divider-line"></div>
+                    <div class="highlight-box">
+                        🎯 هدف: <strong>زندگی کردن با زبان</strong>، نه حفظ کردن آن.<br />
+                        📖 فلسفه: هر جمله باید از <strong>تجربه واقعی</strong> بیاید.
+                    </div>
+                    <span style="font-size:0.7rem; opacity:0.5;">
+                        Veseh به شما کمک می‌کند تا انگلیسی را در لحظات واقعی زندگی‌تان استفاده کنید.
+                    </span>
+                </div>
+                <div class="card-footer-tag">
+                    <i class="fas fa-circle" style="color:var(--soft-purple);"></i> فلسفه اصلی
+                </div>
+            </div>
+
+            <!-- 2. Philosophy -->
+            <div class="guide-card accent-blue">
+                <div class="card-header">
+                    <span class="card-icon">🧠</span>
+                    <span class="card-title">فلسفه Veseh</span>
+                </div>
+                <div class="card-desc">
+                    <div style="display:flex; flex-direction:column; gap:0.3rem;">
+                        <div style="background:rgba(239,68,68,0.04); padding:0.3rem 0.6rem; border-radius:var(--radius-sm); border-right:2px solid rgba(239,68,68,0.2);">
+                            ❌ <strong>روش سنتی:</strong> حفظ کردن ↦ فراموش کردن
+                        </div>
+                        <div style="background:rgba(52,211,153,0.04); padding:0.3rem 0.6rem; border-radius:var(--radius-sm); border-right:2px solid rgba(52,211,153,0.2);">
+                            ✅ <strong>فلسفه Veseh:</strong> زندگی کردن ↦ ماندگار شدن
+                        </div>
+                    </div>
+                    <div class="divider-line"></div>
+                    <strong>هر جمله باید از زندگی واقعی بیاید.</strong><br />
+                    اگر جمله‌ای در زندگی روزمره استفاده نشود، <strong>جایی در Veseh ندارد</strong>.
+                    <div class="divider-line"></div>
+                    <span style="font-size:0.7rem; opacity:0.5;">
+                        Veseh بر اساس نیازهای واقعی شما ساخته می‌شود، نه یک برنامه از پیش تعیین شده.
+                    </span>
+                </div>
+                <div class="card-footer-tag">
+                    <i class="fas fa-circle" style="color:var(--magical-blue);"></i> Real Life First
+                </div>
+            </div>
+
+            <!-- 3. Golden Rule -->
+            <div class="guide-card accent-gold">
+                <div class="card-header">
+                    <span class="card-icon">⚡</span>
+                    <span class="card-title">قانون طلایی</span>
+                </div>
+                <div class="card-desc">
+                    <div class="rule-box">
+                        <span class="q"><strong>❓</strong> امروز به این جمله <strong>نیاز داشتم</strong>؟</span>
+                        <span class="q"><strong>❓</strong> احتمالاً دوباره به آن <strong>نیاز خواهم داشت</strong>؟</span>
+                    </div>
+                    اگر پاسخ هر دو <strong>"نه"</strong> است — <em>آن را ذخیره نکن</em>.<br />
+                    <div class="divider-line"></div>
+                    <div class="highlight-box">
+                        💡 <strong>چرا این قانون مهم است؟</strong><br />
+                        چون Veseh قرار است <strong>مفید</strong> باشد، نه <strong>حجیم</strong>.<br />
+                        جملات بی‌استفاده فقط وقت شما را می‌گیرند.
+                    </div>
+                    <span style="font-size:0.7rem; opacity:0.5;">این قانون، قلب Veseh است.</span>
+                </div>
+                <div class="card-footer-tag">
+                    <i class="fas fa-circle" style="color:var(--gold);"></i> قانون اصلی
+                </div>
+            </div>
+
+            <!-- 4. How to Hunt -->
+            <div class="guide-card accent-purple">
+                <div class="card-header">
+                    <span class="card-icon">🎯</span>
+                    <span class="card-title">چگونه جملات را شکار کنیم</span>
+                </div>
+                <div class="card-desc">
+                    <div class="flow">
+                        <span class="step">آشپزی</span>
+                        <span class="arrow">↓</span>
+                        <span class="step">نیاز به جمله</span>
+                        <span class="arrow">↓</span>
+                        <span class="step">جستجو</span>
+                        <span class="arrow">↓</span>
+                        <span class="step">تمرین</span>
+                        <span class="arrow">↓</span>
+                        <span class="step">استفاده فوری</span>
+                        <span class="arrow">↓</span>
+                        <span class="step">تکرار فردا</span>
+                    </div>
+                    <div class="highlight-box">
+                        <strong>🔑 کلید موفقیت:</strong> هر جمله را در همان لحظه استفاده کن.<br />
+                        این روش، یادگیری را به <strong>عادت روزانه</strong> تبدیل می‌کند.
+                    </div>
+                    <span style="font-size:0.7rem; opacity:0.5;">
+                        به جای مطالعه، <strong>زندگی کنید</strong> و در حین زندگی یاد بگیرید.
+                    </span>
+                </div>
+                <div class="card-footer-tag">
+                    <i class="fas fa-circle" style="color:var(--soft-purple);"></i> روش شکار
+                </div>
+            </div>
+
+            <!-- 5. Where to Start -->
+            <div class="guide-card accent-blue">
+                <div class="card-header">
+                    <span class="card-icon">🚀</span>
+                    <span class="card-title">از کجا شروع کنم؟</span>
+                </div>
+                <div class="card-desc">
+                    فقط از <strong>زندگی امروز</strong> شروع کن.<br />
+                    <div class="divider-line"></div>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin:0.3rem 0;">
+                        <span class="tag-example">🌅 صبح</span>
+                        <span class="tag-example">🍳 آشپزخانه</span>
+                        <span class="tag-example">🚿 حمام</span>
+                        <span class="tag-example">📚 مطالعه</span>
+                        <span class="tag-example">💻 کامپیوتر</span>
+                        <span class="tag-example">📱 گوشی</span>
+                        <span class="tag-example">🧹 تمیزکاری</span>
+                        <span class="tag-example">🛒 خرید</span>
+                        <span class="tag-example">😴 خواب</span>
+                        <span class="tag-example">🏃 ورزش</span>
+                        <span class="tag-example">🚗 رانندگی</span>
+                    </div>
+                    <div class="highlight-box">
+                        <strong>⚠️ قانون مهم:</strong> هرگز سعی نکن همه چیز را یکباره یاد بگیری.<br />
+                        <span style="font-size:0.7rem; opacity:0.5;">یک قدم در روز کافی است.</span>
+                    </div>
+                    <span style="font-size:0.7rem; opacity:0.5;">
+                        با یک حوزه شروع کن و بعد از تسلط، به سراغ حوزه بعدی برو.
+                    </span>
+                </div>
+                <div class="card-footer-tag">
+                    <i class="fas fa-circle" style="color:var(--magical-blue);"></i> شروع آسان
+                </div>
+            </div>
+
+            <!-- 6. Keep It Simple -->
+            <div class="guide-card accent-pink">
+                <div class="card-header">
+                    <span class="card-icon">🧘</span>
+                    <span class="card-title">ساده نگه دار</span>
+                </div>
+                <div class="card-desc">
+                    <div style="background:rgba(239,68,68,0.03); padding:0.5rem; border-radius:var(--radius-sm); border:1px dashed rgba(239,68,68,0.08);">
+                        اگر پیدا کردن یک جمله <strong>طولانی</strong> شد...<br />
+                        <strong style="font-size:1.1rem; color:var(--soft-pink);">ساختار شما خیلی پیچیده است.</strong>
+                    </div>
+                    <div class="divider-line"></div>
+                    <div class="highlight-box">
+                        💡 <strong>اصل سادگی:</strong><br />
+                        Veseh باید همیشه <strong>سریع و بی‌دردسر</strong> باشد.<br />
+                        اگر برای پیدا کردن یک جمله بیش از ۵ ثانیه وقت می‌گذارید، <strong>سیستم را ساده‌تر کنید</strong>.
+                    </div>
+                    <span style="font-size:0.7rem; opacity:0.5;">
+                        سادگی، کلید <strong>استفاده مداوم</strong> است.
+                    </span>
+                </div>
+                <div class="card-footer-tag">
+                    <i class="fas fa-circle" style="color:var(--soft-pink);"></i> اصل سادگی
+                </div>
+            </div>
+
+            <!-- 7. Build Your World -->
+            <div class="guide-card accent-gold">
+                <div class="card-header">
+                    <span class="card-icon">🌍</span>
+                    <span class="card-title">دنیای خودت را بساز</span>
+                </div>
+                <div class="card-desc">
+                    <div style="display:flex; flex-direction:column; gap:0.3rem;">
+                        <div style="background:rgba(239,68,68,0.03); padding:0.3rem 0.6rem; border-radius:var(--radius-sm); border-right:2px solid rgba(239,68,68,0.15);">
+                            ❌ جملات را فقط به خاطر <strong>وجودشان</strong> جمع نکن.
+                        </div>
+                        <div style="background:rgba(52,211,153,0.03); padding:0.3rem 0.6rem; border-radius:var(--radius-sm); border-right:2px solid rgba(52,211,153,0.15);">
+                            ✅ جملات را جمع کن چون <strong>آنها را زندگی می‌کنی</strong>.
+                        </div>
+                    </div>
+                    <div class="divider-line"></div>
+                    <div class="highlight-box">
+                        🌟 <strong>زندگی تو با دیگران متفاوت است.</strong><br />
+                        Veseh باید <strong>شخصی‌ترین</strong> اپلیکیشن تو باشد.<br />
+                        جملات را بر اساس <strong>نیازهای واقعی</strong> خودت انتخاب کن.
+                    </div>
+                    <span style="font-size:0.7rem; opacity:0.5;">
+                        هرچه Veseh شخصی‌تر باشد، <strong>مفیدتر</strong> خواهد بود.
+                    </span>
+                </div>
+                <div class="card-footer-tag">
+                    <i class="fas fa-circle" style="color:var(--gold);"></i> شخصی‌سازی
+                </div>
+            </div>
+
+            <!-- 8. Mission -->
+            <div class="guide-card accent-purple">
+                <div class="card-header">
+                    <span class="card-icon">💫</span>
+                    <span class="card-title">ماموریت</span>
+                </div>
+                <div class="card-desc">
+                    <div style="background:rgba(56,189,248,0.03); padding:0.5rem; border-radius:var(--radius-sm); border:1px solid rgba(56,189,248,0.05); text-align:center;">
+                        <strong style="font-size:1.05rem; color:var(--magical-blue);">
+                            انگلیسی را به بخش طبیعی زندگی روزمره تبدیل کن.
+                        </strong>
+                    </div>
+                    <div class="divider-line"></div>
+                    <div class="highlight-box">
+                        📌 <strong>چرا این مهم است؟</strong><br />
+                        یک جمله مفید <strong>امروز</strong>، ارزش بیشتری از <strong>صد جمله فراموش شده</strong> فردا دارد.
+                    </div>
+                    <div class="divider-line"></div>
+                    <span style="font-size:0.7rem; opacity:0.5;">
+                        ✨ <strong>هر روز یک جمله جدید</strong> به زندگی‌ات اضافه کن.<br />
+                        اینگونه زبان به <strong>بخشی از وجودت</strong> تبدیل می‌شود.
+                    </span>
+                </div>
+                <div class="card-footer-tag">
+                    <i class="fas fa-circle" style="color:var(--soft-purple);"></i> هدف نهایی
+                </div>
+            </div>
+
+        </div>
+
+        <div class="divider-full"></div>
+
+        <!-- ===== FOOTER CHARACTER ===== -->
+        <div class="footer-section">
+            <div class="slogan-box">
+                <span class="slogan-icon">✨</span>
+                <div class="slogan-title">Don't collect English. Live it.</div>
+                <div class="slogan-sub">یک جمله واقعی، ارزشی بیشتر از صد جمله فراموش شده دارد.</div>
+            </div>
+            <img class="veseh-img" src="https://uploadkon.ir/uploads/67b906_26veseh1.png" alt="VESEH Character" />
+        </div>
+
+        <div class="bottom-spacer"></div>
+
+    </div>
+
+    <!-- ============================================================
+    SCRIPT
+    ============================================================ -->
+    <script>
+        // ============================================================
+        // MAGIC BG
+        // ============================================================
+        function createMagicBg() {
+            const container = document.getElementById('magicBg');
+            for (let i = 0; i < 30; i++) {
+                const s = document.createElement('div');
+                s.className = 'sparkle';
+                const size = 2 + Math.random() * 3;
+                s.style.width = size + 'px';
+                s.style.height = size + 'px';
+                s.style.left = Math.random() * 100 + '%';
+                s.style.animationDuration = (10 + Math.random() * 20) + 's';
+                s.style.animationDelay = (Math.random() * 20) + 's';
+                container.appendChild(s);
+            }
+            for (let i = 0; i < 10; i++) {
+                const b = document.createElement('div');
+                b.className = 'bubble';
+                const size = 30 + Math.random() * 60;
+                b.style.width = size + 'px';
+                b.style.height = size + 'px';
+                b.style.left = Math.random() * 100 + '%';
+                b.style.animationDuration = (20 + Math.random() * 25) + 's';
+                b.style.animationDelay = (Math.random() * 20) + 's';
+                container.appendChild(b);
+            }
+        }
+        createMagicBg();
+
+        // ============================================================
+        // LANGUAGE
+        // ============================================================
+        let currentLanguage = 'fa';
+
+        // محتوای کامل دوزبانه
+        const content = {
+            fa: {
+                heroTitle: 'به Veseh خوش آمدید',
+                heroSub: 'همراه شخصی زبان برای زندگی روزمره — جملات واقعی، زندگی واقعی —',
+                sections: [{
+                    title: 'به Veseh خوش آمدید',
+                    desc: 'Veseh یک اپلیکیشن آموزش زبان سنتی نیست. این یک همراه شخصی زبان است که برای آوردن انگلیسی به زندگی روزمره طراحی شده است. هدف: زندگی کردن با زبان، نه حفظ کردن آن. Veseh به شما کمک می‌کند تا انگلیسی را در لحظات واقعی زندگی‌تان استفاده کنید.',
+                    tag: 'فلسفه اصلی'
+                }, {
+                    title: 'فلسفه Veseh',
+                    desc: 'روش سنتی: حفظ کردن ↦ فراموش کردن. فلسفه Veseh: زندگی کردن ↦ ماندگار شدن. هر جمله باید از زندگی واقعی بیاید. اگر جمله‌ای در زندگی روزمره استفاده نشود، جایی در Veseh ندارد. Veseh بر اساس نیازهای واقعی شما ساخته می‌شود، نه یک برنامه از پیش تعیین شده.',
+                    tag: 'Real Life First'
+                }, {
+                    title: 'قانون طلایی',
+                    desc: 'قبل از اضافه کردن یک جمله، از خودت بپرس: امروز به این جمله نیاز داشتم؟ احتمالاً دوباره به آن نیاز خواهم داشت؟ اگر پاسخ هر دو "نه" است — آن را ذخیره نکن. این قانون، قلب Veseh است.',
+                    tag: 'قانون اصلی'
+                }, {
+                    title: 'چگونه جملات را شکار کنیم',
+                    desc: 'یادگیری عملی — هر جمله را در همان لحظه استفاده کن. این روش، یادگیری را به عادت روزانه تبدیل می‌کند. به جای مطالعه، زندگی کنید و در حین زندگی یاد بگیرید.',
+                    tag: 'روش شکار'
+                }, {
+                    title: 'از کجا شروع کنم؟',
+                    desc: 'فقط از زندگی امروز شروع کن. هرگز سعی نکن همه چیز را یکباره یاد بگیری. یک قدم در روز کافی است. با یک حوزه شروع کن و بعد از تسلط، به سراغ حوزه بعدی برو.',
+                    tag: 'شروع آسان'
+                }, {
+                    title: 'ساده نگه دار',
+                    desc: 'اگر پیدا کردن یک جمله طولانی شد... ساختار شما خیلی پیچیده است. Veseh باید همیشه سریع و بی‌دردسر باشد. سادگی، کلید استفاده مداوم است.',
+                    tag: 'اصل سادگی'
+                }, {
+                    title: 'دنیای خودت را بساز',
+                    desc: 'زندگی تو با دیگران متفاوت است. جملات را فقط به خاطر وجودشان جمع نکن. جملات را جمع کن چون آنها را زندگی می‌کنی. Veseh شخصی‌ترین اپلیکیشن توست.',
+                    tag: 'شخصی‌سازی'
+                }, {
+                    title: 'ماموریت',
+                    desc: 'ماموریت Veseh ساده است: انگلیسی را به بخش طبیعی زندگی روزمره تبدیل کن. یک جمله مفید امروز، ارزش بیشتری از صد جمله فراموش شده فردا دارد. ✨ هر روز یک جمله جدید به زندگی‌ات اضافه کن.',
+                    tag: 'هدف نهایی'
+                }],
+                slogan: 'یک جمله واقعی، ارزشی بیشتر از صد جمله فراموش شده دارد.',
+                badge: 'راهنمای کامل کاربر',
+                stats: ['۸ بخش راهنما', '۲ زبان', 'تم شب پیش‌فرض', 'زندگی واقعی اول'],
+                scrollText: 'اسکرول برای مشاهده راهنما'
+            },
+            en: {
+                heroTitle: 'Welcome to Veseh',
+                heroSub: 'Personal language companion for everyday life — Real phrases, real life —',
+                sections: [{
+                    title: 'Welcome to Veseh',
+                    desc: 'Veseh is not a traditional language learning application. It is a personal language companion designed to bring English into everyday life. Goal: Living with language, not memorizing it. Veseh helps you use English in real moments of your life.',
+                    tag: 'Core Philosophy'
+                }, {
+                    title: 'Veseh Philosophy',
+                    desc: 'Traditional learning: Memorize ↦ Forget. Veseh philosophy: Live ↦ Retain. Every phrase should come from real life. If a phrase is not used in daily life, it has no place in Veseh. Veseh is built based on your real needs, not a pre-made program.',
+                    tag: 'Real Life First'
+                }, {
+                    title: 'The Golden Rule',
+                    desc: 'Before adding a phrase ask yourself: Did I need this today? Will I probably need it again? If the answer to both is "No" — Don\'t save it. This rule is the heart of Veseh.',
+                    tag: 'Core Rule'
+                }, {
+                    title: 'How to Hunt Phrases',
+                    desc: 'Practical learning — Use every phrase immediately. This method turns learning into a daily habit. Instead of studying, live and learn while living.',
+                    tag: 'Hunting Method'
+                }, {
+                    title: 'Where Should I Start?',
+                    desc: 'Start only from today\'s life. Never try to learn everything at once. One step a day is enough. Start with one area and move to the next after mastering it.',
+                    tag: 'Easy Start'
+                }, {
+                    title: 'Keep It Simple',
+                    desc: 'If finding a phrase takes too long... Your structure is too complicated. Veseh should always feel fast and effortless. Simplicity is the key to consistent use.',
+                    tag: 'Simplicity Principle'
+                }, {
+                    title: 'Build Your Own World',
+                    desc: 'Your life is different from everyone else\'s. Don\'t collect expressions just because they exist. Collect expressions because you live them. Veseh is your most personal app.',
+                    tag: 'Personalization'
+                }, {
+                    title: 'The Mission',
+                    desc: 'The mission of Veseh is simple: Turn English into a natural part of everyday life. One useful phrase today is more valuable than one hundred forgotten phrases tomorrow. ✨ Add one new sentence to your life every day.',
+                    tag: 'Final Goal'
+                }],
+                slogan: 'One real phrase is worth more than a hundred forgotten ones.',
+                badge: 'Complete User Guide',
+                stats: ['8 Guide Sections', '2 Languages', 'Dark Theme Default', 'Real Life First'],
+                scrollText: 'Scroll to view guide'
+            }
+        };
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'fa' ? 'en' : 'fa';
+            document.getElementById('langBtn').textContent = currentLanguage === 'fa' ? 'FA' : 'EN';
+            updateContent();
+        }
+
+        function updateContent() {
+            const c = content[currentLanguage];
+            const cards = document.querySelectorAll('.guide-card');
+
+            // Hero
+            document.querySelector('.hero-title').innerHTML =
+                currentLanguage === 'fa' ?
+                'به <span class="highlight">Veseh</span> خوش آمدید' :
+                'Welcome to <span class="highlight">Veseh</span>';
+
+            document.querySelector('.hero-sub').innerHTML = c.heroSub;
+            document.querySelector('.hero-badge').innerHTML =
+                `<i class="fas fa-compass"></i> ${c.badge}`;
+
+            // Stats
+            const statItems = document.querySelectorAll('.hero-stats .stat-item');
+            const icons = ['fa-book', 'fa-tag', 'fa-moon', 'fa-globe'];
+            statItems.forEach((item, index) => {
+                if (index < c.stats.length) {
+                    const icon = item.querySelector('i');
+                    const strong = item.querySelector('strong');
+                    const textNode = item.childNodes[item.childNodes.length - 1];
+                    if (icon && strong) {
+                        // Keep icon and strong, update the rest
+                        const newText = c.stats[index];
+                        const parts = newText.split(' ');
+                        // Find where the strong part is
+                        const strongIndex = parts.findIndex(p => p.match(/^\d+/) || p === 'شب' || p === 'اول' || p ===
+                            'Default' || p === 'First');
+                        if (strongIndex !== -1) {
+                            const before = parts.slice(0, strongIndex).join(' ');
+                            const after = parts.slice(strongIndex + 1).join(' ');
+                            const strongText = parts[strongIndex];
+                            // Rebuild
+                            let result = '';
+                            if (before) result += before + ' ';
+                            result += `<strong>${strongText}</strong>`;
+                            if (after) result += ' ' + after;
+                            // Remove old text nodes
+                            while (item.childNodes.length > 2) {
+                                item.removeChild(item.childNodes[item.childNodes.length - 1]);
+                            }
+                            // Add new text
+                            const textNode2 = document.createTextNode(' ' + result);
+                            item.appendChild(textNode2);
+                        } else {
+                            // Simple case - just update text
+                            while (item.childNodes.length > 2) {
+                                item.removeChild(item.childNodes[item.childNodes.length - 1]);
+                            }
+                            const textNode2 = document.createTextNode(' ' + newText);
+                            item.appendChild(textNode2);
+                        }
+                    }
+                }
+            });
+
+            // Scroll text
+            document.querySelector('.scroll-indicator span').textContent = c.scrollText;
+
+            // Cards
+            cards.forEach((card, index) => {
+                const titleEl = card.querySelector('.card-title');
+                const descEl = card.querySelector('.card-desc');
+                const tagEl = card.querySelector('.card-footer-tag');
+                const section = c.sections[index];
+
+                if (titleEl && section) {
+                    if (index === 0 && currentLanguage === 'fa') {
+                        titleEl.innerHTML = 'به <span class="highlight">Veseh</span> خوش آمدید';
+                    } else if (index === 0 && currentLanguage === 'en') {
+                        titleEl.innerHTML = 'Welcome to <span class="highlight">Veseh</span>';
+                    } else {
+                        titleEl.textContent = section.title;
+                    }
+                }
+
+                if (descEl && section) {
+                    // Special handling for each section
+                    if (index === 0) {
+                        // Welcome
+                        const text = currentLanguage === 'fa' ?
+                            '<strong>Veseh یک اپلیکیشن آموزش زبان سنتی نیست.</strong><br />این یک <strong>همراه شخصی زبان</strong> است که برای آوردن انگلیسی به <strong>زندگی روزمره</strong> طراحی شده است.<div class="divider-line"></div><div class="highlight-box">🎯 هدف: <strong>زندگی کردن با زبان</strong>، نه حفظ کردن آن.<br />📖 فلسفه: هر جمله باید از <strong>تجربه واقعی</strong> بیاید.</div><span style="font-size:0.7rem; opacity:0.5;">Veseh به شما کمک می‌کند تا انگلیسی را در لحظات واقعی زندگی‌تان استفاده کنید.</span>' :
+                            '<strong>Veseh is not a traditional language learning application.</strong><br />It is a <strong>personal language companion</strong> designed to bring English into <strong>everyday life</strong>.<div class="divider-line"></div><div class="highlight-box">🎯 Goal: <strong>Living with language</strong>, not memorizing it.<br />📖 Philosophy: Every phrase should come from <strong>real experience</strong>.</div><span style="font-size:0.7rem; opacity:0.5;">Veseh helps you use English in real moments of your life.</span>';
+                        descEl.innerHTML = text;
+                    } else if (index === 1) {
+                        // Philosophy
+                        const text = currentLanguage === 'fa' ?
+                            '<div style="display:flex; flex-direction:column; gap:0.3rem;"><div style="background:rgba(239,68,68,0.04); padding:0.3rem 0.6rem; border-radius:var(--radius-sm); border-right:2px solid rgba(239,68,68,0.2);">❌ <strong>روش سنتی:</strong> حفظ کردن ↦ فراموش کردن</div><div style="background:rgba(52,211,153,0.04); padding:0.3rem 0.6rem; border-radius:var(--radius-sm); border-right:2px solid rgba(52,211,153,0.2);">✅ <strong>فلسفه Veseh:</strong> زندگی کردن ↦ ماندگار شدن</div></div><div class="divider-line"></div><strong>هر جمله باید از زندگی واقعی بیاید.</strong><br />اگر جمله‌ای در زندگی روزمره استفاده نشود، <strong>جایی در Veseh ندارد</strong>.<div class="divider-line"></div><span style="font-size:0.7rem; opacity:0.5;">Veseh بر اساس نیازهای واقعی شما ساخته می‌شود، نه یک برنامه از پیش تعیین شده.</span>' :
+                            '<div style="display:flex; flex-direction:column; gap:0.3rem;"><div style="background:rgba(239,68,68,0.04); padding:0.3rem 0.6rem; border-radius:var(--radius-sm); border-right:2px solid rgba(239,68,68,0.2);">❌ <strong>Traditional:</strong> Memorize ↦ Forget</div><div style="background:rgba(52,211,153,0.04); padding:0.3rem 0.6rem; border-radius:var(--radius-sm); border-right:2px solid rgba(52,211,153,0.2);">✅ <strong>Veseh Philosophy:</strong> Live ↦ Retain</div></div><div class="divider-line"></div><strong>Every phrase should come from real life.</strong><br />If a phrase is not used in daily life, it has <strong>no place in Veseh</strong>.<div class="divider-line"></div><span style="font-size:0.7rem; opacity:0.5;">Veseh is built based on your real needs, not a pre-made program.</span>';
+                        descEl.innerHTML = text;
+                    } else if (index === 2) {
+                        // Golden Rule
+                        const text = currentLanguage === 'fa' ?
+                            '<div class="rule-box"><span class="q"><strong>❓</strong> امروز به این جمله <strong>نیاز داشتم</strong>؟</span><span class="q"><strong>❓</strong> احتمالاً دوباره به آن <strong>نیاز خواهم داشت</strong>؟</span></div>اگر پاسخ هر دو <strong>"نه"</strong> است — <em>آن را ذخیره نکن</em>.<div class="divider-line"></div><div class="highlight-box">💡 <strong>چرا این قانون مهم است؟</strong><br />چون Veseh قرار است <strong>مفید</strong> باشد، نه <strong>حجیم</strong>.<br />جملات بی‌استفاده فقط وقت شما را می‌گیرند.</div><span style="font-size:0.7rem; opacity:0.5;">این قانون، قلب Veseh است.</span>' :
+                            '<div class="rule-box"><span class="q"><strong>❓</strong> Did I need this <strong>today</strong>?</span><span class="q"><strong>❓</strong> Will I probably need it <strong>again</strong>?</span></div>If the answer to both is <strong>"No"</strong> — <em>Don\'t save it</em>.<div class="divider-line"></div><div class="highlight-box">💡 <strong>Why is this rule important?</strong><br />Because Veseh is meant to be <strong>useful</strong>, not <strong>bloated</strong>.<br />Useless phrases just waste your time.</div><span style="font-size:0.7rem; opacity:0.5;">This rule is the heart of Veseh.</span>';
+                        descEl.innerHTML = text;
+                    } else if (index === 3) {
+                        // Hunt
+                        const steps = currentLanguage === 'fa' ?
+                            ['آشپزی', 'نیاز به جمله', 'جستجو', 'تمرین', 'استفاده فوری', 'تکرار فردا'] :
+                            ['Cooking', 'Need a sentence', 'Search it', 'Practice it', 'Use it immediately',
+                                'Repeat tomorrow'
+                            ];
+                        const text = currentLanguage === 'fa' ?
+                            `<div class="flow">${steps.map((s, i) => `<span class="step">${s}</span>${i < steps.length - 1 ? '<span class="arrow">↓</span>' : ''}`).join('')}</div><div class="highlight-box"><strong>🔑 کلید موفقیت:</strong> هر جمله را در همان لحظه استفاده کن.<br />این روش، یادگیری را به <strong>عادت روزانه</strong> تبدیل می‌کند.</div><span style="font-size:0.7rem; opacity:0.5;">به جای مطالعه، <strong>زندگی کنید</strong> و در حین زندگی یاد بگیرید.</span>` :
+                            `<div class="flow">${steps.map((s, i) => `<span class="step">${s}</span>${i < steps.length - 1 ? '<span class="arrow">↓</span>' : ''}`).join('')}</div><div class="highlight-box"><strong>🔑 Key to success:</strong> Use every phrase immediately.<br />This method turns learning into a <strong>daily habit</strong>.</div><span style="font-size:0.7rem; opacity:0.5;">Instead of studying, <strong>live</strong> and learn while living.</span>`;
+                        descEl.innerHTML = text;
+                    } else if (index === 4) {
+                        // Start
+                        const tags = currentLanguage === 'fa' ?
+                            ['🌅 صبح', '🍳 آشپزخانه', '🚿 حمام', '📚 مطالعه', '💻 کامپیوتر', '📱 گوشی', '🧹 تمیزکاری', '🛒 خرید',
+                                '😴 خواب', '🏃 ورزش', '🚗 رانندگی'
+                            ] :
+                            ['🌅 Morning', '🍳 Kitchen', '🚿 Bathroom', '📚 Studying', '💻 Computer', '📱 Phone',
+                                '🧹 Cleaning', '🛒 Shopping', '😴 Sleeping', '🏃 Exercise', '🚗 Driving'
+                            ];
+                        const text = currentLanguage === 'fa' ?
+                            `فقط از <strong>زندگی امروز</strong> شروع کن.<div class="divider-line"></div><div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin:0.3rem 0;">${tags.map(t => `<span class="tag-example">${t}</span>`).join(' ')}</div><div class="highlight-box"><strong>⚠️ قانون مهم:</strong> هرگز سعی نکن همه چیز را یکباره یاد بگیری.<br /><span style="font-size:0.7rem; opacity:0.5;">یک قدم در روز کافی است.</span></div><span style="font-size:0.7rem; opacity:0.5;">با یک حوزه شروع کن و بعد از تسلط، به سراغ حوزه بعدی برو.</span>` :
+                            `Start only from <strong>today's life</strong>.<div class="divider-line"></div><div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin:0.3rem 0;">${tags.map(t => `<span class="tag-example">${t}</span>`).join(' ')}</div><div class="highlight-box"><strong>⚠️ Important rule:</strong> Never try to learn everything at once.<br /><span style="font-size:0.7rem; opacity:0.5;">One step a day is enough.</span></div><span style="font-size:0.7rem; opacity:0.5;">Start with one area and move to the next after mastering it.</span>`;
+                        descEl.innerHTML = text;
+                    } else if (index === 5) {
+                        // Simple
+                        const text = currentLanguage === 'fa' ?
+                            '<div style="background:rgba(239,68,68,0.03); padding:0.5rem; border-radius:var(--radius-sm); border:1px dashed rgba(239,68,68,0.08);">اگر پیدا کردن یک جمله <strong>طولانی</strong> شد...<br /><strong style="font-size:1.1rem; color:var(--soft-pink);">ساختار شما خیلی پیچیده است.</strong></div><div class="divider-line"></div><div class="highlight-box">💡 <strong>اصل سادگی:</strong><br />Veseh باید همیشه <strong>سریع و بی‌دردسر</strong> باشد.<br />اگر برای پیدا کردن یک جمله بیش از ۵ ثانیه وقت می‌گذارید، <strong>سیستم را ساده‌تر کنید</strong>.</div><span style="font-size:0.7rem; opacity:0.5;">سادگی، کلید <strong>استفاده مداوم</strong> است.</span>' :
+                            '<div style="background:rgba(239,68,68,0.03); padding:0.5rem; border-radius:var(--radius-sm); border:1px dashed rgba(239,68,68,0.08);">If finding a phrase takes <strong>too long</strong>...<br /><strong style="font-size:1.1rem; color:var(--soft-pink);">Your structure is too complicated.</strong></div><div class="divider-line"></div><div class="highlight-box">💡 <strong>Simplicity Principle:</strong><br />Veseh should always feel <strong>fast and effortless</strong>.<br />If it takes more than 5 seconds to find a phrase, <strong>simplify your system</strong>.</div><span style="font-size:0.7rem; opacity:0.5;">Simplicity is the key to <strong>consistent use</strong>.</span>';
+                        descEl.innerHTML = text;
+                    } else if (index === 6) {
+                        // World
+                        const text = currentLanguage === 'fa' ?
+                            '<div style="display:flex; flex-direction:column; gap:0.3rem;"><div style="background:rgba(239,68,68,0.03); padding:0.3rem 0.6rem; border-radius:var(--radius-sm); border-right:2px solid rgba(239,68,68,0.15);">❌ جملات را فقط به خاطر <strong>وجودشان</strong> جمع نکن.</div><div style="background:rgba(52,211,153,0.03); padding:0.3rem 0.6rem; border-radius:var(--radius-sm); border-right:2px solid rgba(52,211,153,0.15);">✅ جملات را جمع کن چون <strong>آنها را زندگی می‌کنی</strong>.</div></div><div class="divider-line"></div><div class="highlight-box">🌟 <strong>زندگی تو با دیگران متفاوت است.</strong><br />Veseh باید <strong>شخصی‌ترین</strong> اپلیکیشن تو باشد.<br />جملات را بر اساس <strong>نیازهای واقعی</strong> خودت انتخاب کن.</div><span style="font-size:0.7rem; opacity:0.5;">هرچه Veseh شخصی‌تر باشد، <strong>مفیدتر</strong> خواهد بود.</span>' :
+                            '<div style="display:flex; flex-direction:column; gap:0.3rem;"><div style="background:rgba(239,68,68,0.03); padding:0.3rem 0.6rem; border-radius:var(--radius-sm); border-right:2px solid rgba(239,68,68,0.15);">❌ Don\'t collect expressions just because they <strong>exist</strong>.</div><div style="background:rgba(52,211,153,0.03); padding:0.3rem 0.6rem; border-radius:var(--radius-sm); border-right:2px solid rgba(52,211,153,0.15);">✅ Collect expressions because <strong>you live them</strong>.</div></div><div class="divider-line"></div><div class="highlight-box">🌟 <strong>Your life is different from everyone else\'s.</strong><br />Veseh should be your <strong>most personal</strong> app.<br />Choose phrases based on your <strong>real needs</strong>.</div><span style="font-size:0.7rem; opacity:0.5;">The more personal Veseh is, the <strong>more useful</strong> it will be.</span>';
+                        descEl.innerHTML = text;
+                    } else if (index === 7) {
+                        // Mission
+                        const text = currentLanguage === 'fa' ?
+                            '<div style="background:rgba(56,189,248,0.03); padding:0.5rem; border-radius:var(--radius-sm); border:1px solid rgba(56,189,248,0.05); text-align:center;"><strong style="font-size:1.05rem; color:var(--magical-blue);">انگلیسی را به بخش طبیعی زندگی روزمره تبدیل کن.</strong></div><div class="divider-line"></div><div class="highlight-box">📌 <strong>چرا این مهم است؟</strong><br />یک جمله مفید <strong>امروز</strong>، ارزش بیشتری از <strong>صد جمله فراموش شده</strong> فردا دارد.</div><div class="divider-line"></div><span style="font-size:0.7rem; opacity:0.5;">✨ <strong>هر روز یک جمله جدید</strong> به زندگی‌ات اضافه کن.<br />اینگونه زبان به <strong>بخشی از وجودت</strong> تبدیل می‌شود.</span>' :
+                            '<div style="background:rgba(56,189,248,0.03); padding:0.5rem; border-radius:var(--radius-sm); border:1px solid rgba(56,189,248,0.05); text-align:center;"><strong style="font-size:1.05rem; color:var(--magical-blue);">Turn English into a natural part of everyday life.</strong></div><div class="divider-line"></div><div class="highlight-box">📌 <strong>Why is this important?</strong><br />One useful phrase <strong>today</strong> is more valuable than <strong>one hundred forgotten phrases</strong> tomorrow.</div><div class="divider-line"></div><span style="font-size:0.7rem; opacity:0.5;">✨ <strong>Add one new sentence</strong> to your life every day.<br />This way, language becomes <strong>part of who you are</strong>.</span>';
+                        descEl.innerHTML = text;
+                    }
+
+                    // Update tag
+                    if (tagEl && section) {
+                        const icon = tagEl.querySelector('i');
+                        if (icon) {
+                            // Get color from existing icon
+                            const color = icon.style.color || 'var(--soft-purple)';
+                            tagEl.innerHTML = `<i class="${icon.className}" style="color:${color};"></i> ${section.tag}`;
+                        }
+                    }
+                }
+            });
+
+            // Slogan
+            document.querySelector('.slogan-sub').textContent = c.slogan;
+        }
+
+        document.getElementById('langBtn').onclick = toggleLanguage;
+
+        // ============================================================
+        // THEME
+        // ============================================================
+        let isLightMode = false;
+
+        function toggleTheme() {
+            isLightMode = !isLightMode;
+            document.body.classList.toggle('light-mode', isLightMode);
+            const icon = document.getElementById('themeIcon');
+            icon.className = isLightMode ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        document.getElementById('themeBtn').onclick = toggleTheme;
+
+        // ============================================================
+        // LOGO CLICK — بازگشت به صفحه اصلی
+        // ============================================================
+        document.querySelectorAll('.logo-img, .logo-text, .hero-logo-img, .hero-logo-text').forEach(el => {
+            el.addEventListener('click', function() {
+                window.location.href = 'index.html';
+            });
+        });
+
+        // ============================================================
+        // INIT
+        // ============================================================
+        console.log('✨ VESEH — راهنمای کامل کاربر (نسخه حرفه‌ای با توضیحات کامل)');
+        console.log('📖 ۸ بخش راهنما با توضیحات جامع');
+        console.log('🌙 تم پیش‌فرض: شب');
+        console.log('🇮🇷 زبان پیش‌فرض: فارسی');
+        console.log('🖥️  سازگار با ویندوز و اندروید');
+        console.log('📐 طراحی دشبورد حرفه‌ای');
+        console.log('🖱️  کلیک روی لوگو → بازگشت به صفحه اصلی');
+    </script>
+</body>
+</html>
